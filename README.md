@@ -1,1 +1,1 @@
-# odin-rps
+Rock Paper Scissors, all played within the comfort of the browser console, at the behest of my overlords at TOP.
