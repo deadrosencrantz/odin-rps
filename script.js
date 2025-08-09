@@ -26,3 +26,21 @@ After 5 rounds, if human has higher score, print "You win overall!"
 If CPU has higher score, print "You lose overall!"
 If it's a tie, print "It's a tie overall!"
 */
+
+function getComputerChoice(){
+   let randomNumber = Math.random();
+   let chosenWeapon = "";
+   if (randomNumber <= 0.33333333333333333) {
+    chosenWeapon = "Rock";
+   } else if (randomNumber > 0.33333333333333333 && randomNumber <= 0.66666666666666666){
+    chosenWeapon = "Paper";
+   } else {
+    chosenWeapon = "Scissors";
+   }
+   return chosenWeapon;
+   }
+   
+let computerChoice = getComputerChoice();
+
+console.log(computerChoice)
+
