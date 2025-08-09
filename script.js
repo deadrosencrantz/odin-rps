@@ -31,16 +31,34 @@ function getComputerChoice(){
    let randomNumber = Math.random();
    let chosenWeapon = "";
    if (randomNumber <= 0.33333333333333333) {
-    chosenWeapon = "Rock";
+        chosenWeapon = "Rock";
    } else if (randomNumber > 0.33333333333333333 && randomNumber <= 0.66666666666666666){
-    chosenWeapon = "Paper";
+        chosenWeapon = "Paper";
    } else {
-    chosenWeapon = "Scissors";
+        chosenWeapon = "Scissors";
    }
    return chosenWeapon;
    }
    
+function getHumanChoice() {
+    let humanInput = (window.prompt("Choose your weapon!").toLowerCase());
+    let chosenWeapon = "";
+    if (humanInput === "rock") {
+        chosenWeapon = "Rock";
+    } else if (humanInput === "paper"){
+        chosenWeapon = "Paper";
+    } else {
+        chosenWeapon = "Scissors";
+    }
+    return chosenWeapon;
+}
+
+
 let computerChoice = getComputerChoice();
+let humanChoice = getHumanChoice();
 
 console.log(computerChoice)
+console.log(humanChoice)
+
+
 
