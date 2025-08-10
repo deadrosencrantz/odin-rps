@@ -45,20 +45,75 @@ function getHumanChoice() {
     let chosenWeapon = "";
     if (humanInput === "rock") {
         chosenWeapon = "Rock";
-    } else if (humanInput === "paper"){
+    }
+    if (humanInput === "paper"){
         chosenWeapon = "Paper";
-    } else {
+    }
+    if (humanInput==="scissors"){
         chosenWeapon = "Scissors";
     }
     return chosenWeapon;
 }
 
-
+function playRound() {
 let computerChoice = getComputerChoice();
 let humanChoice = getHumanChoice();
+let roundResult = "";
+if (humanChoice === "Rock"){
+    if (computerChoice === "Rock") {
+        roundResult = "tie";
+    }
+    if (computerChoice === "Paper") {
+        roundResult = "loss";
+    }
+    if (computerChoice === "Scissors") {
+        roundResult = "win";
+    }
+}
+if (humanChoice === "Paper"){
+    if (computerChoice === "Rock") {
+        roundResult = "win";
+    }
+    if (computerChoice === "Paper") {
+        roundResult = "tie";
+    }
+    if (computerChoice === "Scissors") {
+        roundResult = "loss";
+    }
+}
+if (humanChoice === "Scissors"){
+    if (computerChoice === "Rock") {
+        roundResult = "loss";
+    }
+    if (computerChoice === "Paper") {
+        roundResult = "win";
+    }
+    if (computerChoice === "Scissors") {
+        roundResult = "tie";
+    }
+}
+if (roundResult === "win") {
+    console.log("You win the round!")
+    humanScore += 1;
+}
+if (roundResult === "loss") {
+    console.log("You lost this time.")
+    computerScore += 1;
+}
+if (roundResult === "tie") {
+    console.log("This round is a tie!")
+}
 
-console.log(computerChoice)
-console.log(humanChoice)
+}
+
+
+let computerScore = 0;
+let humanScore = 0;
+
+playRound();
+
+console.log(`Computer score: ${computerScore}`);
+console.log(`Human score: ${humanScore}`);
 
 
 
