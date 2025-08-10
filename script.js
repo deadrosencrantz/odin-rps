@@ -106,14 +106,29 @@ if (roundResult === "tie") {
 
 }
 
+function playGame() {
+    for (let i = 1; i <= 5; i++) {
+        playRound();
+    }
+    console.log(`The final scores are ${humanScore} to you and ${computerScore} to your opponent.`)
+    if (humanScore > computerScore) {
+        console.log("You won overall. Congratulations!");
+    }
+    if (humanScore < computerScore) {
+        console.log("You lost overall. Better luck next time!")
+    }
+    if (humanScore == computerScore) {
+        console.log("It was a tie overall. What are the chances?")
+    }
+}
+
 
 let computerScore = 0;
 let humanScore = 0;
 
-playRound();
+playGame();
 
-console.log(`Computer score: ${computerScore}`);
-console.log(`Human score: ${humanScore}`);
+
 
 
 
